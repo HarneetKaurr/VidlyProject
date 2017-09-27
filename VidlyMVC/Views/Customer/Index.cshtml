@@ -7,6 +7,7 @@
 }
 
 <h2>Customers</h2>
+
 @if (!Model.Any())
 {
     <p> We don't have any customers yet</p>
@@ -17,6 +18,7 @@ else
         <thead>
         <tr>
             <th>Customer</th>
+            <th>Membership Type</th>
         </tr>
         </thead>
         <tbody>
@@ -25,6 +27,7 @@ else
         {
             <tr>
                 <td>@Html.ActionLink(cust.Name, "Details", "Customer", new { id = cust.Id }, null)</td>
+                <td>@cust.MembershipType.Name</td>
             </tr>
         }
         </tbody>
